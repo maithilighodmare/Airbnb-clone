@@ -1,0 +1,90 @@
+<% layout("/layout/boilerplate.ejs") %>
+<div class="main">
+    <h1>All listings</h1>
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1  "> 
+     <% for (let listing of allListings) { %>
+      <a href="/listings/<%= listing._id %>" 
+        class="listing-link">
+        <div class="card column">
+            <img 
+                src="<%= listing.image %>"
+                 class="card-img-top" alt={listing.title}
+                 style="height: 20rem;"
+                 />
+                 <div class="card-img-overlay">abcs</div>
+            <div class="card-body">
+                <p class="card-text">
+                   <b> <%= listing.title %></b>
+                    <br>
+                    &#8377; <%=  listing.price.toLocaleString("en-IN") %> /nigth
+                </p>
+            </div>
+        </div>
+        <% } %> 
+      </div>   
+    </div> 
+
+   
+   
+<!-- </body> --> 
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanderLust</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .listing {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+      }
+      .listing img {
+        width: 150px;
+        height: 100px;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+      .listing-details {
+        display: flex;
+        flex-direction: column;
+      }
+      .listing-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .listing-price {
+        font-size: 1rem;
+        color: green;
+        margin: 5px 0;
+      }
+      .listing-location {
+        font-size: 0.9rem;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>All Listings</h3>
+    <form method="GET" action="/listings/new">
+      <button>Create New Listing</button>
+    </form>
+    <ul>
+      <% for(let listing of allListings) { %>
+        <li class="listing">
+          <img src="<%= listing.image %>" alt="<%= listing.title %>" />
+          <div class="listing-details">
+            <div class="listing-title"><%= listing.title %></div>
+            <div class="listing-price">$<%= listing.price %> per night</div>
+            <div class="listing-location"><%= listing.location %>, <%= listing.country %></div>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  </body>
+</html> -->
